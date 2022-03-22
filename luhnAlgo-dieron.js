@@ -1,3 +1,5 @@
+const existingCards = ["79927398713"];
+
 function luhnChecker(digits) {
 
     let digitsLength = digits.length;
@@ -18,12 +20,20 @@ function luhnChecker(digits) {
     }
 
     if (sum % 10 == 0) {
-        return "This is a valid card"
-    } else {
-        return "This is NOT a valid card"
-    };
+        return true
+    } 
+    
+    return false
+}
+
+function cardExists(cardNumber) {
+    if (luhnChecker(cardNumber) && existingCards.includes(cardNumber)) {
+        return "This card exists"
+    }
+
+    return "This card does not exist"
 }
      
-let digits = "79927398713";
+let creditCard = "79927398713";
 
-console.log(luhnChecker(digits));
+console.log(cardExists(creditCard));
