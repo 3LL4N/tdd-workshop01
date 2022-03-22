@@ -3,7 +3,6 @@ function minMaxScaling(numberList) {
     const scaledList = [];
 
     const maxNum = Math.max(...numberList);
-
     const minNum = Math.min(...numberList);
 
     for (i = 0; i < numberList.length; i++) {
