@@ -1,17 +1,21 @@
-function minMaxScaling(numberList) {
+export default function minMaxScaling(numberList: Array<number>) {
 
     const scaledList = [];
 
     const maxNum = Math.max(...numberList);
     const minNum = Math.min(...numberList);
 
-    for (i = 0; i < numberList.length; i++) {
+    if(maxNum == minNum || numberList.length == 1) {
+        return [...numberList]
+    }
+
+    for (let i = 0; i < numberList.length; i++) {
         
         const currentNumber = numberList[i]
 
         const scaledNum = (currentNumber - minNum)/(maxNum - minNum);
 
-        scaledList.push(scaledNum);
+        scaledList.push(Math.round(scaledNum * 10) / 10);
     }
 
     return scaledList;
