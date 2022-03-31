@@ -1,11 +1,11 @@
-function convertToRoman(num) {
+export default function convertToRoman(num: number) {
  
     var roman ="";
    
     var values = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
     var literals = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
    
-    for (i = 0; i < values.length; i++) {
+    for (let i = 0; i < values.length; i++) {
 
         if (num >= values[i]) {
         
